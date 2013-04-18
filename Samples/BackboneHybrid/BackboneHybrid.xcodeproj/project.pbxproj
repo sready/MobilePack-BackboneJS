@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4303DD4917208688008AC3F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303DD4817208688008AC3F2 /* Foundation.framework */; };
+		4303DD4B17208688008AC3F2 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303DD4A17208688008AC3F2 /* MessageUI.framework */; };
+		4303DD4D17208688008AC3F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303DD4C17208688008AC3F2 /* UIKit.framework */; };
+		4303DD4F17208688008AC3F2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303DD4E17208688008AC3F2 /* CFNetwork.framework */; };
+		4303DD5117208688008AC3F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303DD5017208688008AC3F2 /* CoreGraphics.framework */; };
+		4303DD5317208688008AC3F2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303DD5217208688008AC3F2 /* CoreLocation.framework */; };
+		4303DD5517208688008AC3F2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303DD5417208688008AC3F2 /* CoreMedia.framework */; };
+		4303DD5717208688008AC3F2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303DD5617208688008AC3F2 /* QuartzCore.framework */; };
+		4303DD5917208688008AC3F2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303DD5817208688008AC3F2 /* Security.framework */; };
+		4303DD5B17208688008AC3F2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303DD5A17208688008AC3F2 /* MobileCoreServices.framework */; };
+		4303DD5D17208688008AC3F2 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303DD5C17208688008AC3F2 /* AddressBook.framework */; };
+		4303DD5F17208688008AC3F2 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303DD5E17208688008AC3F2 /* AddressBookUI.framework */; };
+		4303DD6117208688008AC3F2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303DD6017208688008AC3F2 /* AudioToolbox.framework */; };
+		4303DD6317208688008AC3F2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303DD6217208688008AC3F2 /* AVFoundation.framework */; };
+		4303DD6517208688008AC3F2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303DD6417208688008AC3F2 /* MediaPlayer.framework */; };
+		4303DD6717208688008AC3F2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303DD6617208688008AC3F2 /* SystemConfiguration.framework */; };
+		4303DD6D17208689008AC3F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4303DD6B17208689008AC3F2 /* InfoPlist.strings */; };
+		4303DD6F17208689008AC3F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4303DD6E17208689008AC3F2 /* main.m */; };
+		4303DD7117208689008AC3F2 /* BackboneHybrid-Prefix.pch in Resources */ = {isa = PBXBuildFile; fileRef = 4303DD7017208689008AC3F2 /* BackboneHybrid-Prefix.pch */; };
+		4303DD8D17208699008AC3F2 /* SalesforceHybridSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303DD8C17208699008AC3F2 /* SalesforceHybridSDK.framework */; };
+		4303DD8F1720869A008AC3F2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303DD8E17208699008AC3F2 /* libz.dylib */; };
+		4303DD931720869A008AC3F2 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4303DD921720869A008AC3F2 /* icon-72.png */; };
+		4303DD951720869A008AC3F2 /* icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4303DD941720869A008AC3F2 /* icon-72@2x.png */; };
+		4303DD971720869A008AC3F2 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4303DD961720869A008AC3F2 /* icon.png */; };
+		4303DD991720869B008AC3F2 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4303DD981720869B008AC3F2 /* icon@2x.png */; };
+		4303DD9C1720869B008AC3F2 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4303DD9B1720869B008AC3F2 /* Default-Landscape~ipad.png */; };
+		4303DD9E1720869B008AC3F2 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4303DD9D1720869B008AC3F2 /* Default-Landscape@2x~ipad.png */; };
+		4303DDA01720869B008AC3F2 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4303DD9F1720869B008AC3F2 /* Default-Portrait~ipad.png */; };
+		4303DDA21720869B008AC3F2 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4303DDA11720869B008AC3F2 /* Default-Portrait@2x~ipad.png */; };
+		4303DDA41720869B008AC3F2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4303DDA31720869B008AC3F2 /* Default.png */; };
+		4303DDA61720869C008AC3F2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4303DDA51720869C008AC3F2 /* Default@2x.png */; };
+		4303DDA81720869C008AC3F2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4303DDA71720869C008AC3F2 /* Default-568h@2x.png */; };
+		4303DDAA1720869C008AC3F2 /* Default~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4303DDA91720869C008AC3F2 /* Default~iPad.png */; };
+		4303DDAC1720869C008AC3F2 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 4303DDAB1720869C008AC3F2 /* readme.md */; };
+		4303DDB01720869D008AC3F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4303DDAF1720869D008AC3F2 /* AppDelegate.m */; };
+		4303DDB31720869D008AC3F2 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 4303DDB21720869D008AC3F2 /* README */; };
+		4303DDB51720869D008AC3F2 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4303DDB41720869D008AC3F2 /* config.xml */; };
+		4303DDB71720869E008AC3F2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4303DDB61720869E008AC3F2 /* Settings.bundle */; };
+		4303DDB9172086A0008AC3F2 /* CordovaResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4303DDB8172086A0008AC3F2 /* CordovaResources.bundle */; };
+		4303DDBB172086A0008AC3F2 /* SalesforceSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4303DDBA172086A0008AC3F2 /* SalesforceSDKResources.bundle */; };
+		4303DDC21720876B008AC3F2 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 4303DDC11720876B008AC3F2 /* www */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4303DD4317208688008AC3F2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = www;
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4303DD4517208688008AC3F2 /* BackboneHybrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackboneHybrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4303DD4817208688008AC3F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4303DD4A17208688008AC3F2 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		4303DD4C17208688008AC3F2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4303DD4E17208688008AC3F2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		4303DD5017208688008AC3F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4303DD5217208688008AC3F2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4303DD5417208688008AC3F2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		4303DD5617208688008AC3F2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4303DD5817208688008AC3F2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4303DD5A17208688008AC3F2 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		4303DD5C17208688008AC3F2 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		4303DD5E17208688008AC3F2 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		4303DD6017208688008AC3F2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4303DD6217208688008AC3F2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4303DD6417208688008AC3F2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		4303DD6617208688008AC3F2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4303DD6A17208689008AC3F2 /* BackboneHybrid-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BackboneHybrid-Info.plist"; sourceTree = "<group>"; };
+		4303DD6C17208689008AC3F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4303DD6E17208689008AC3F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4303DD7017208689008AC3F2 /* BackboneHybrid-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BackboneHybrid-Prefix.pch"; sourceTree = "<group>"; };
+		4303DD8C17208699008AC3F2 /* SalesforceHybridSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SalesforceHybridSDK.framework; sourceTree = "<group>"; };
+		4303DD8E17208699008AC3F2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
+		4303DD921720869A008AC3F2 /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-72.png"; path = "Resources/icons/icon-72.png"; sourceTree = "<group>"; };
+		4303DD941720869A008AC3F2 /* icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-72@2x.png"; path = "Resources/icons/icon-72@2x.png"; sourceTree = "<group>"; };
+		4303DD961720869A008AC3F2 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/icons/icon.png; sourceTree = "<group>"; };
+		4303DD981720869B008AC3F2 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Resources/icons/icon@2x.png"; sourceTree = "<group>"; };
+		4303DD9B1720869B008AC3F2 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "Resources/splash/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		4303DD9D1720869B008AC3F2 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x~ipad.png"; path = "Resources/splash/Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		4303DD9F1720869B008AC3F2 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "Resources/splash/Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		4303DDA11720869B008AC3F2 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait@2x~ipad.png"; path = "Resources/splash/Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		4303DDA31720869B008AC3F2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/splash/Default.png; sourceTree = "<group>"; };
+		4303DDA51720869C008AC3F2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/splash/Default@2x.png"; sourceTree = "<group>"; };
+		4303DDA71720869C008AC3F2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/splash/Default-568h@2x.png"; sourceTree = "<group>"; };
+		4303DDA91720869C008AC3F2 /* Default~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default~iPad.png"; path = "Resources/splash/Default~iPad.png"; sourceTree = "<group>"; };
+		4303DDAB1720869C008AC3F2 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.md; sourceTree = "<group>"; };
+		4303DDAE1720869D008AC3F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
+		4303DDAF1720869D008AC3F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
+		4303DDB21720869D008AC3F2 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; name = README; path = Plugins/README; sourceTree = "<group>"; };
+		4303DDB41720869D008AC3F2 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = config.xml; sourceTree = "<group>"; };
+		4303DDB61720869E008AC3F2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		4303DDB8172086A0008AC3F2 /* CordovaResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CordovaResources.bundle; sourceTree = "<group>"; };
+		4303DDBA172086A0008AC3F2 /* SalesforceSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SalesforceSDKResources.bundle; sourceTree = "<group>"; };
+		4303DDC11720876B008AC3F2 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4303DD4017208688008AC3F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4303DD4917208688008AC3F2 /* Foundation.framework in Frameworks */,
+				4303DD4B17208688008AC3F2 /* MessageUI.framework in Frameworks */,
+				4303DD4D17208688008AC3F2 /* UIKit.framework in Frameworks */,
+				4303DD4F17208688008AC3F2 /* CFNetwork.framework in Frameworks */,
+				4303DD5117208688008AC3F2 /* CoreGraphics.framework in Frameworks */,
+				4303DD5317208688008AC3F2 /* CoreLocation.framework in Frameworks */,
+				4303DD5517208688008AC3F2 /* CoreMedia.framework in Frameworks */,
+				4303DD5717208688008AC3F2 /* QuartzCore.framework in Frameworks */,
+				4303DD5917208688008AC3F2 /* Security.framework in Frameworks */,
+				4303DD5B17208688008AC3F2 /* MobileCoreServices.framework in Frameworks */,
+				4303DD5D17208688008AC3F2 /* AddressBook.framework in Frameworks */,
+				4303DD5F17208688008AC3F2 /* AddressBookUI.framework in Frameworks */,
+				4303DD6117208688008AC3F2 /* AudioToolbox.framework in Frameworks */,
+				4303DD6317208688008AC3F2 /* AVFoundation.framework in Frameworks */,
+				4303DD6517208688008AC3F2 /* MediaPlayer.framework in Frameworks */,
+				4303DD6717208688008AC3F2 /* SystemConfiguration.framework in Frameworks */,
+				4303DD8D17208699008AC3F2 /* SalesforceHybridSDK.framework in Frameworks */,
+				4303DD8F1720869A008AC3F2 /* libz.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4303DD3A17208688008AC3F2 = {
+			isa = PBXGroup;
+			children = (
+				4303DD6817208688008AC3F2 /* BackboneHybrid */,
+				4303DD4717208688008AC3F2 /* Frameworks */,
+				4303DD4617208688008AC3F2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4303DD4617208688008AC3F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4303DD4517208688008AC3F2 /* BackboneHybrid.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4303DD4717208688008AC3F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4303DD4817208688008AC3F2 /* Foundation.framework */,
+				4303DD4A17208688008AC3F2 /* MessageUI.framework */,
+				4303DD4C17208688008AC3F2 /* UIKit.framework */,
+				4303DD4E17208688008AC3F2 /* CFNetwork.framework */,
+				4303DD5017208688008AC3F2 /* CoreGraphics.framework */,
+				4303DD5217208688008AC3F2 /* CoreLocation.framework */,
+				4303DD5417208688008AC3F2 /* CoreMedia.framework */,
+				4303DD5617208688008AC3F2 /* QuartzCore.framework */,
+				4303DD5817208688008AC3F2 /* Security.framework */,
+				4303DD5A17208688008AC3F2 /* MobileCoreServices.framework */,
+				4303DD5C17208688008AC3F2 /* AddressBook.framework */,
+				4303DD5E17208688008AC3F2 /* AddressBookUI.framework */,
+				4303DD6017208688008AC3F2 /* AudioToolbox.framework */,
+				4303DD6217208688008AC3F2 /* AVFoundation.framework */,
+				4303DD6417208688008AC3F2 /* MediaPlayer.framework */,
+				4303DD6617208688008AC3F2 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4303DD6817208688008AC3F2 /* BackboneHybrid */ = {
+			isa = PBXGroup;
+			children = (
+				4303DDC11720876B008AC3F2 /* www */,
+				4303DD8C17208699008AC3F2 /* SalesforceHybridSDK.framework */,
+				4303DD8E17208699008AC3F2 /* libz.dylib */,
+				4303DDAB1720869C008AC3F2 /* readme.md */,
+				4303DDB61720869E008AC3F2 /* Settings.bundle */,
+				4303DDB8172086A0008AC3F2 /* CordovaResources.bundle */,
+				4303DDBA172086A0008AC3F2 /* SalesforceSDKResources.bundle */,
+				4303DD901720869A008AC3F2 /* Resources */,
+				4303DDAD1720869D008AC3F2 /* Classes */,
+				4303DDB11720869D008AC3F2 /* Plugins */,
+				4303DD6917208689008AC3F2 /* Supporting Files */,
+			);
+			path = BackboneHybrid;
+			sourceTree = "<group>";
+		};
+		4303DD6917208689008AC3F2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4303DD6A17208689008AC3F2 /* BackboneHybrid-Info.plist */,
+				4303DD6B17208689008AC3F2 /* InfoPlist.strings */,
+				4303DD6E17208689008AC3F2 /* main.m */,
+				4303DD7017208689008AC3F2 /* BackboneHybrid-Prefix.pch */,
+				4303DDB41720869D008AC3F2 /* config.xml */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4303DD901720869A008AC3F2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4303DD911720869A008AC3F2 /* icons */,
+				4303DD9A1720869B008AC3F2 /* splash */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4303DD911720869A008AC3F2 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				4303DD921720869A008AC3F2 /* icon-72.png */,
+				4303DD941720869A008AC3F2 /* icon-72@2x.png */,
+				4303DD961720869A008AC3F2 /* icon.png */,
+				4303DD981720869B008AC3F2 /* icon@2x.png */,
+			);
+			name = icons;
+			sourceTree = "<group>";
+		};
+		4303DD9A1720869B008AC3F2 /* splash */ = {
+			isa = PBXGroup;
+			children = (
+				4303DD9B1720869B008AC3F2 /* Default-Landscape~ipad.png */,
+				4303DD9D1720869B008AC3F2 /* Default-Landscape@2x~ipad.png */,
+				4303DD9F1720869B008AC3F2 /* Default-Portrait~ipad.png */,
+				4303DDA11720869B008AC3F2 /* Default-Portrait@2x~ipad.png */,
+				4303DDA31720869B008AC3F2 /* Default.png */,
+				4303DDA51720869C008AC3F2 /* Default@2x.png */,
+				4303DDA71720869C008AC3F2 /* Default-568h@2x.png */,
+				4303DDA91720869C008AC3F2 /* Default~iPad.png */,
+			);
+			name = splash;
+			sourceTree = "<group>";
+		};
+		4303DDAD1720869D008AC3F2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4303DDAE1720869D008AC3F2 /* AppDelegate.h */,
+				4303DDAF1720869D008AC3F2 /* AppDelegate.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		4303DDB11720869D008AC3F2 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				4303DDB21720869D008AC3F2 /* README */,
+			);
+			name = Plugins;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4303DD4417208688008AC3F2 /* BackboneHybrid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4303DDBE172086A0008AC3F2 /* Build configuration list for PBXNativeTarget "BackboneHybrid" */;
+			buildPhases = (
+				4303DD3F17208688008AC3F2 /* Sources */,
+				4303DD4017208688008AC3F2 /* Frameworks */,
+				4303DD4117208688008AC3F2 /* Resources */,
+				4303DD4217208688008AC3F2 /* Sources */,
+				4303DD4317208688008AC3F2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BackboneHybrid;
+			productName = BackboneHybrid;
+			productReference = 4303DD4517208688008AC3F2 /* BackboneHybrid.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4303DD3B17208688008AC3F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Developerforce;
+			};
+			buildConfigurationList = 4303DD3E17208688008AC3F2 /* Build configuration list for PBXProject "BackboneHybrid" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4303DD3A17208688008AC3F2;
+			productRefGroup = 4303DD4617208688008AC3F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4303DD4417208688008AC3F2 /* BackboneHybrid */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4303DD4117208688008AC3F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4303DD6D17208689008AC3F2 /* InfoPlist.strings in Resources */,
+				4303DD7117208689008AC3F2 /* BackboneHybrid-Prefix.pch in Resources */,
+				4303DD931720869A008AC3F2 /* icon-72.png in Resources */,
+				4303DD951720869A008AC3F2 /* icon-72@2x.png in Resources */,
+				4303DD971720869A008AC3F2 /* icon.png in Resources */,
+				4303DD991720869B008AC3F2 /* icon@2x.png in Resources */,
+				4303DD9C1720869B008AC3F2 /* Default-Landscape~ipad.png in Resources */,
+				4303DD9E1720869B008AC3F2 /* Default-Landscape@2x~ipad.png in Resources */,
+				4303DDA01720869B008AC3F2 /* Default-Portrait~ipad.png in Resources */,
+				4303DDA21720869B008AC3F2 /* Default-Portrait@2x~ipad.png in Resources */,
+				4303DDA41720869B008AC3F2 /* Default.png in Resources */,
+				4303DDA61720869C008AC3F2 /* Default@2x.png in Resources */,
+				4303DDA81720869C008AC3F2 /* Default-568h@2x.png in Resources */,
+				4303DDAA1720869C008AC3F2 /* Default~iPad.png in Resources */,
+				4303DDAC1720869C008AC3F2 /* readme.md in Resources */,
+				4303DDB31720869D008AC3F2 /* README in Resources */,
+				4303DDB51720869D008AC3F2 /* config.xml in Resources */,
+				4303DDB71720869E008AC3F2 /* Settings.bundle in Resources */,
+				4303DDB9172086A0008AC3F2 /* CordovaResources.bundle in Resources */,
+				4303DDBB172086A0008AC3F2 /* SalesforceSDKResources.bundle in Resources */,
+				4303DDC21720876B008AC3F2 /* www in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4303DD3F17208688008AC3F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4303DD6F17208689008AC3F2 /* main.m in Sources */,
+				4303DDB01720869D008AC3F2 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4303DD4217208688008AC3F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4303DD6B17208689008AC3F2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4303DD6C17208689008AC3F2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4303DDBC172086A0008AC3F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4303DDBD172086A0008AC3F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "CORDOVA_FRAMEWORK=1";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4303DDBF172086A0008AC3F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/BackboneHybrid\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BackboneHybrid/BackboneHybrid-Prefix.pch";
+				INFOPLIST_FILE = "BackboneHybrid/BackboneHybrid-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4303DDC0172086A0008AC3F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/BackboneHybrid\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BackboneHybrid/BackboneHybrid-Prefix.pch";
+				INFOPLIST_FILE = "BackboneHybrid/BackboneHybrid-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4303DD3E17208688008AC3F2 /* Build configuration list for PBXProject "BackboneHybrid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4303DDBC172086A0008AC3F2 /* Debug */,
+				4303DDBD172086A0008AC3F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4303DDBE172086A0008AC3F2 /* Build configuration list for PBXNativeTarget "BackboneHybrid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4303DDBF172086A0008AC3F2 /* Debug */,
+				4303DDC0172086A0008AC3F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4303DD3B17208688008AC3F2 /* Project object */;
+}
