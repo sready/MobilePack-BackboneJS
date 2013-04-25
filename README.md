@@ -10,8 +10,8 @@
 
 The Mobile Pack for Backbone.js supports two deployment options for your HTML5 mobile app. 
 
-1. To use the Mobile Pack with a Visualforce page (i.e. host the app on Force.com), follow [this quick start](https://events.developerforce.com/mobile/getting-started/html5#backbone).
-2. To deploy your HTML5 app externally (e.g. on [Heroku](http://www.heroku.com/)) and source data from Salesforce, follow [this quick start](https://events.developerforce.com/mobile/getting-started/html5#backbone-heroku).
+1. To use the Mobile Pack with a Visualforce page (i.e. host the app on Force.com), follow [this quick start](http://www.developerforce.com/mobile/getting-started/html5#backbone).
+2. To deploy your HTML5 app externally (e.g. on [Heroku](http://www.heroku.com/)) and source data from Salesforce, follow [this quick start](http://www.developerforce.com/mobile/getting-started/html5#backbone-heroku).
  
 ## What’s included in this Mobile Pack
 
@@ -27,4 +27,4 @@ The Mobile Pack for Backbone.js supports two deployment options for your HTML5 m
  
 ## Learn More
 
-For much more information building enterprise mobile applications on Force.com with Mobile Packs, go to the [Mobile Packs home page](https://events.developerforce.com/mobile/services/mobile-packs).
+For much more information on building enterprise mobile applications on Force.com with Mobile Packs, go to the [Mobile Packs home page](http://www.developerforce.com/mobile/services/mobile-packs).
