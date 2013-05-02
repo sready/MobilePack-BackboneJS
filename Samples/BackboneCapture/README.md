@@ -1,0 +1,3 @@
+# BackboneHybrid
+
+Sample XCode project showing how to capture media (photos, audio, video) via the [PhoneGap API](http://docs.phonegap.com/en/2.3.0/index.html), upload to [Chatter Files](http://blogs.salesforce.com/community/2012/04/chatter-files-a-better-option-for-attaching-files-to-records.html), and post a link to a contact's Chatter page using the [Chatter REST API](http://wiki.developerforce.com/page/Chatter_API). Based on the [Backbone Hybrid sample](https://github.com/developerforce/MobilePack-BackboneJS/tree/master/Samples/BackboneHybrid). Requires XCode 4.6.1.
