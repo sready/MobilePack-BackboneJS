@@ -345,7 +345,7 @@
         routes: {
           "": "contacts",
           "contacts": "contacts",
-		  "new": "newContact",
+		      "new": "newContact",
           ":id": "contact"
         },          
         contacts: function() {
@@ -367,7 +367,7 @@
         },
         contact: function(id) {
           logToConsole("contact read begin");
-		  var contact = new app.Contact({Id: id});
+		      var contact = new app.Contact({Id: id});
           $.mobile.loading( "show", { text: 'Loading Contact', textVisible: true } );
           contact.fetch({success: function(){
             $.mobile.loading( "hide" );
@@ -378,7 +378,7 @@
         },
         newContact: function(id) {
           logToConsole("new contact begin");
-		  var contact = new app.Contact();
+		      var contact = new app.Contact();
           $("#contact-content").empty();
           $("#contact-content").html(new app.ContactDetailView({model: contact}).el);
           $("#contact-content").trigger( 'create' );

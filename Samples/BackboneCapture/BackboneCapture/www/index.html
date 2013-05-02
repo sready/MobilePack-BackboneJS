@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <title>Contacts in Backbone.js</title>
+
+  <!-- ========= -->
+  <!--    CSS    -->
+  <!-- ========= -->
+  <link href="resources/css/jquery.mobile-1.3.0.min.css" rel="stylesheet" />
+
+  <!-- ========= -->
+  <!-- Libraries -->
+  <!-- ========= -->
+  <script src="resources/lib/jquery.js" type="text/javascript"></script>
+  <script src="resources/lib/cordova-2.3.0.js"></script>
+  <script src="resources/lib/SFHybridApp.js"></script>
+  <script src="resources/lib/SalesforceOAuthPlugin.js"></script>
+  <script src="resources/lib/lodash.js" type="text/javascript"></script>
+  <script src="resources/lib/backbone.js" type="text/javascript"></script>
+  <script src="resources/lib/forcetk.js" type="text/javascript"></script>
+  <script src="resources/lib/backbone.force.js" type="text/javascript"></script>
+  <script>
+    $( document ).on("mobileinit",
+                     // Set up the "mobileinit" handler before including jQuery Mobile
+                     function() {
+                     $.mobile.ajaxEnabled = false;
+                     $.mobile.linkBindingEnabled = false;
+                     });
+  </script>
+  <script src="resources/lib/jquerymobile.js" type="text/javascript"></script>
+
+  <script>
+    var debugMode = true;
+    var logToConsole = cordova.require("salesforce/util/logger").logToConsole;
+    // The version of the Force.com REST API you wish to use in your app.
+    var apiVersion = "v27.0";
+
+    // Log JS errors to Cordova console
+    window.onerror = function(message, url, lineNumber) {
+      logToConsole("Error: "+message+" in "+url+" at line "+lineNumber);
+    }
+    
+    jQuery(document).ready(function() {
+        //Add event listeners and so forth here
+        logToConsole("onLoad: jquery ready");
+		document.addEventListener("deviceready", onDeviceReady,false);
+
+    });
+
+    // When this function is called, Cordova has been initialized and is ready to roll 
+    function onDeviceReady() {
+        logToConsole("onDeviceReady: Cordova ready");
+		//Call getAuthCredentials to get the initial session credentials
+        cordova.require("salesforce/plugin/oauth").getAuthCredentials(salesforceSessionRefreshed, getAuthCredentialsError);
+
+        //register to receive notifications when autoRefreshOnForeground refreshes the sfdc session
+        document.addEventListener("salesforceSessionRefresh",salesforceSessionRefreshed,false);
+    }
+
+    function salesforceSessionRefreshed(creds) {
+        logToConsole("salesforceSessionRefreshed");
+        
+        // Depending on how we come into this method, `creds` may be callback data from the auth
+        // plugin, or an event fired from the plugin.  The data is different between the two.
+        var credsData = creds;
+        if (creds.data)  // Event sets the `data` object with the auth data.
+            credsData = creds.data;
+        var client = new forcetk.Client(credsData.clientId, credsData.loginUrl);
+        client.setSessionToken(credsData.accessToken, apiVersion, credsData.instanceUrl);
+        client.setRefreshToken(credsData.refreshToken);
+		    myapp(client);
+    }
+
+    function getAuthCredentialsError(error) {
+        logToConsole("getAuthCredentialsError: " + error);
+    }
+  </script>
+</head>
+<body>
+
+  <!-- ========= -->
+  <!-- HTML CODE -->
+  <!-- ========= -->
+  <div id="contacts" data-role="page" data-title="Contacts">
+    <div data-role="header">
+      <h1>Capture</h1>
+    </div><!-- /header -->
+    <div data-role="content" id="contacts-content">
+    </div>
+  </div>
+
+  <div id="contact" data-role="page" data-title="Contact">
+    <div data-role="header">
+      	<a href='#' id="back" class='ui-btn-left' data-icon='arrow-l'>Back</a>
+		<h1>Capture</h1>
+    </div><!-- /header -->
+    <div data-role="content" id="contact-content">
+    </div>
+  </div>
+
+  <!-- ========= -->
+  <!-- Templates -->
+  <!-- ========= -->
+  <script type="text/template" id="contacts-template">
+    <p>Select a contact, then capture photos, audio and video to post to their Chatter page:</p>
+    <ul data-role="listview" data-inset="true" id="contact-list">
+    </ul>
+    <div data-role="footer">
+      <div data-role="fieldcontain">
+        <label for="select-theme" class="select">UI Theme:</label>
+        <select class="theme-selector" name="select-theme" id="select-theme">
+          <option value="default">default</option>
+          <option value="a">a</option>
+          <option value="b">b</option>
+          <option value="c">c</option>
+          <option value="d">d</option>
+          <option value="e">e</option>
+        </select>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/template" id="contact-template">
+    <% if (typeof(Id) !== 'undefined') { %>
+      <a href="#<%= Id %>"><%- Name %></a> 
+    <% } else { %>
+      <%- Name %>
+    <% } %>
+  </script>
+
+  <script type="text/template" id="contact-detail-template">
+    <form name="contactform" id="contactform">
+      <p>Capture media and post to Chatter for <%- FirstName %> <%- LastName %></p>
+      <p><a href="#" class="get_picture" data-role="button" data-inline="true">Get Picture</a></p>
+      <p><a href="#" class="capture_audio" data-role="button" data-inline="true">Capture Audio</a></p>
+      <p><a href="#" class="capture_video" data-role="button" data-inline="true">Capture Video</a></p>
+    </form>
+  </script>
+
+  <!-- =============== -->
+  <!-- Javascript code -->
+  <!-- =============== -->
+  <script type="text/javascript">
+    
+    function changeTheme(theme){
+      var hfTheme = theme, 
+          cTheme = theme;
+
+      if (theme === 'default') {
+        // "If no theme swatch letter is set at all, the framework uses the 
+        // "a" swatch (black in the default theme) for headers and footers 
+        // and the "c" swatch (light gray in the default theme) for the page 
+        // content to maximize contrast between the both."
+        // http://jquerymobile.com/demos/1.2.1/docs/api/themes.html
+        hfTheme = "a";
+        cTheme = "c";
+      }
+
+      $.mobile.activePage.find('.ui-btn').not('.ui-li-divider')
+                         .removeClass('ui-btn-up-a ui-btn-up-b ui-btn-up-c ui-btn-up-d ui-btn-up-e ui-btn-hover-a ui-btn-hover-b ui-btn-hover-c ui-btn-hover-d ui-btn-hover-e')
+                         .addClass('ui-btn-up-' + cTheme)
+                         .attr('data-theme', cTheme);
+      
+      $.mobile.activePage.find('.ui-li-divider').each(function (index, obj) {
+        if ($(this).parent().attr('data-divider-theme') == 'undefined') {
+            $(this).removeClass('ui-bar-a ui-bar-b ui-bar-c ui-bar-d ui-bar-e')
+                   .addClass('ui-bar-' + cTheme)
+                   .attr('data-theme', cTheme);
+        }
+      })
+                         
+      $.mobile.activePage.find('.ui-header, .ui-footer')
+                         .removeClass('ui-bar-a ui-bar-b ui-bar-c ui-bar-d ui-bar-e')
+                         .addClass('ui-bar-' + hfTheme)
+                         .attr('data-theme', hfTheme);
+      $.mobile.activePage.removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e')
+                         .addClass('ui-body-' + cTheme)
+                         .attr('data-theme', cTheme);
+    }
+
+
+
+    function myapp(client) {
+      logToConsole(client);
+      Backbone.Force.initialize(client);
+	  
+      var app = {}; // create namespace for our app
+	  	logToConsole("backbone started");
+	
+      //--------------
+      // Models
+      //--------------
+      app.Contact = Backbone.Force.Model.extend({
+        type:'Contact',
+        fields:['Id', 'Name', 'FirstName', 'LastName', 'Email']
+      });
+
+      app.ContentVersion = Backbone.Force.Model.extend({
+        type:'ContentVersion',
+        fields:['ContentDocumentId']
+      });
+
+      //--------------
+      // Collections
+      //--------------
+      app.ContactsCollection = Backbone.Force.Collection.extend({
+        model: app.Contact,
+        query: "WHERE IsDeleted = false"
+      }),
+
+      //--------------
+      // Views
+      //--------------
+
+      // renders individual Contact list item (li)
+      app.ContactView = Backbone.View.extend({
+        tagName: 'li',
+        template: _.template($('#contact-template').html()),
+        render: function(){
+          this.$el.html(this.template(this.model.toJSON()));
+          return this; // enable chained calls
+        },
+        initialize: function(){
+        }
+      });
+
+  		logToConsole("contact list init");
+    
+      var showError = function(error){
+        $.mobile.loading( "hide" );
+        var errorText = "Error: " + ((typeof error === 'object') ? JSON.stringify(error) : error);
+        logToConsole(errorText);
+        alert(errorText);
+      }
+      
+      var uploadContent = function(filename, contentType, imageData, contactId){
+        logToConsole("in uploadContent");
+        // Create a new ContentVersion and save it
+        // Note that this mechanism is limited to 50 MB of data - to upload
+        // bigger files we would need send binary data in a multipart message
+        // Note - 50MB is about 6 minutes of video
+        var contentVersion = new app.ContentVersion({
+          Origin: 'H',            // 'H' for a Chatter File, 'C' for a Content document
+          PathOnClient: filename, // Hint as to type of data
+          VersionData: imageData
+        });
+        $.mobile.loading( 'show', {
+          text: 'Uploading '+contentType+' to Chatter Files',
+          textVisible: true,
+        });
+        contentVersion.save(null, {
+          success: function() {
+            logToConsole("in uploadContent - save success callback");
+            // Fetch the ContentVersion record to get the ContentDocumentId
+            $.mobile.loading( 'show', {
+              text: 'Fetching Document ID',
+              textVisible: true,
+            });
+            contentVersion.fetch({
+              success: function() {
+                logToConsole("in getPicture - fetch success callback");
+                logToConsole("contentVersion.attributes.ContentDocumentId: "+contentVersion.attributes.ContentDocumentId);
+                // Post to Chatter feed for Contact
+                $.mobile.loading( 'show', {
+                  text: 'Posting Chatter message',
+                  textVisible: true,
+                });
+                var payload = { attachment: {
+                    attachmentType: "ExistingContent",
+                    contentDocumentId: contentVersion.attributes.ContentDocumentId
+                  },
+                  body: {
+                    messageSegments : [{
+                      type: 'Text',
+                      text: 'Here is my '+contentType
+                    }]
+                  }
+                };
+                logToConsole("in getPicture - payload: "+JSON.stringify(payload));
+                logToConsole("Client: "+JSON.stringify(client));
+                logToConsole('/v27.0/chatter/feeds/record/'+contactId+'/feed-items');
+                client.ajax('/v27.0/chatter/feeds/record/'+contactId+'/feed-items',
+                  function(){
+                    logToConsole("in getPicture - chatter success callback");
+                    $.mobile.loading( "hide" );
+                    alert('Posted '+contentType+' successfully');
+                  },
+                  showError,
+                  'POST',
+                  JSON.stringify(payload));
+              },
+              error: showError
+            });
+          },
+          error: function(model, xhr, options) {
+            showError('Error: status='+xhr.status+
+              '\nstatusText='+xhr.statusText+
+              '\nresponseText='+xhr.responseText);
+          }
+        });                           
+      };
+      
+      var uploadMediaFile = function(mediaFile, contentType, contactId){
+        var reader = new FileReader();
+        reader.onloadend = function(evt) {
+            console.log('Reading '+mediaFile.name+' as data URL');
+            var contentData = evt.target.result.split(',')[1];
+            uploadContent(mediaFile.name, contentType, contentData, contactId);
+        };
+        reader.readAsDataURL(mediaFile);
+      };
+
+      // renders individual Contact for editing
+      app.ContactDetailView = Backbone.View.extend({
+        template: _.template($('#contact-detail-template').html()),
+        render: function(){
+          this.$el.html(this.template(this.model.toJSON()));
+          return this; // enable chained calls
+        },
+        initialize: function(){
+          this.model.on('destroy', this.remove, this);
+          this.render();
+        },
+        events: {
+          'change' : 'change',
+          'click .get_picture' : 'getPicture',
+          'click .capture_audio': 'captureAudio',
+          'click .capture_video': 'captureVideo'
+        },
+        change: function (event) {
+            // Apply the change to the model
+            var target = event.target;
+            var change = {};
+            change[target.name] = target.value;
+            this.model.set(change);
+        },
+        getPicture: function(){
+          self = this;
+          logToConsole("in getPicture");
+          var options = {
+            quality: 50,
+            correctOrientation: true,
+            // Very useful for debugging in the emulator!
+            //sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+            sourceType: Camera.PictureSourceType.CAMERA,
+            destinationType: Camera.DestinationType.DATA_URL
+          };
+          navigator.camera.getPicture(function(imageData) {
+            uploadContent('image.png', 'image', imageData, self.model.attributes.Id);
+          }, function(errorMsg) {
+            // Most likely error is user cancelling out
+            alert("Error: "+errorMsg);
+          }, options);
+          return false;
+        },
+        captureAudio: function(){
+          self = this;
+          logToConsole("in captureAudio");
+          navigator.device.capture.captureAudio(function(mediaFiles) {
+            uploadMediaFile(mediaFiles[0], 'audio', self.model.attributes.Id);
+          }, function(errorMsg) {
+            // Most likely error is user cancelling out
+            alert("Error: "+errorMsg);
+          });
+          return false;
+        },
+        captureVideo: function(){
+          self = this;
+          logToConsole("in captureVideo");
+          navigator.device.capture.captureVideo(function(mediaFiles) {
+            uploadMediaFile(mediaFiles[0], 'video', self.model.attributes.Id);
+          }, function(errorMsg) {
+            // Most likely error is user cancelling out
+            alert("Error: "+errorMsg);
+          });
+          return false;
+        }
+      });
+
+	  	logToConsole("contact edit init");
+	
+
+      // renders the full list of Contacts calling ContactView for each one.
+      app.ContactsView = Backbone.View.extend({
+        template: _.template($('#contacts-template').html()),
+        initialize: function() {
+          this.render();
+          this.model.on('add', this.render, this);
+          this.model.on('reset', this.render, this);
+        },
+        events: {
+          'change .theme-selector' : 'changeTheme'
+        },
+        renderOne: function(contact){
+          var view = new app.ContactView({model: contact});
+          this.$('#contact-list').append(view.render().el);
+        },
+        render: function(){
+          this.$el.html(this.template());
+          this.$('#contact-list').empty();
+          for (var i = 0, l = this.model.models.length; i < l; i++) {
+            this.renderOne(this.model.models[i]);
+          }
+        },
+        changeTheme: function(event){
+          event.preventDefault();
+          
+          var theme = $(event.target).children("option").filter(":selected").text();
+
+          changeTheme(theme);
+        },
+        close: function() {
+          logToConsole("IN CLOSE!!!");
+        }
+      });
+
+			logToConsole("contact render init");
+		
+			logToConsole("contact router init begin");
+      //Define the Application Router
+      app.Router = Backbone.Router.extend({ 
+        routes: {
+          "": "contacts",
+          "contacts": "contacts",
+          ":id": "contact"
+        },          
+        contacts: function() {
+          var contactsCollection = new app.ContactsCollection();
+		      logToConsole("collection begin");
+          $.mobile.loading( "show", { text: 'Loading Contacts', textVisible: true } );
+          logToConsole("collection search");
+          contactsCollection.fetch({success: function(){
+            logToConsole("collection found");
+                                   
+            $.mobile.loading( "hide" );
+            $("#contacts-content").html(new app.ContactsView({model: contactsCollection}).el);
+            // Let jQuery Mobile do its stuff
+            $("#contacts-content").trigger( 'create' );
+            $.mobile.changePage( "#contacts" , { reverse: false, changeHash: false } );
+          },error: function(model, response) {logToConsole('ERROR::'+response.responseText);}});
+          logToConsole("collection end");
+        },
+        contact: function(id) {
+          logToConsole("contact read begin");
+          var contact = new app.Contact({Id: id});
+          $.mobile.loading( "show", { text: 'Loading Contact', textVisible: true } );
+          contact.fetch({success: function(){
+            $.mobile.loading( "hide" );
+            $("#contact-content").html(new app.ContactDetailView({model: contact}).el);
+            $("#contact-content").trigger( 'create' );
+            $.mobile.changePage( "#contact" , { reverse: false, changeHash: false } );
+          }});
+        }
+      });
+	
+   	  app.router = new app.Router();
+      logToConsole("contact router init end");
+      Backbone.history.start();
+      logToConsole("backbone end");
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,512 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43DE7CEB1731A17300B6D60D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DE7CEA1731A17200B6D60D /* Foundation.framework */; };
+		43DE7CED1731A17300B6D60D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DE7CEC1731A17300B6D60D /* MessageUI.framework */; };
+		43DE7CEF1731A17300B6D60D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DE7CEE1731A17300B6D60D /* UIKit.framework */; };
+		43DE7CF11731A17300B6D60D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DE7CF01731A17300B6D60D /* CFNetwork.framework */; };
+		43DE7CF31731A17300B6D60D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DE7CF21731A17300B6D60D /* CoreGraphics.framework */; };
+		43DE7CF51731A17300B6D60D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DE7CF41731A17300B6D60D /* CoreLocation.framework */; };
+		43DE7CF71731A17300B6D60D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DE7CF61731A17300B6D60D /* CoreMedia.framework */; };
+		43DE7CF91731A17300B6D60D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DE7CF81731A17300B6D60D /* QuartzCore.framework */; };
+		43DE7CFB1731A17300B6D60D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DE7CFA1731A17300B6D60D /* Security.framework */; };
+		43DE7CFD1731A17300B6D60D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DE7CFC1731A17300B6D60D /* MobileCoreServices.framework */; };
+		43DE7CFF1731A17300B6D60D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DE7CFE1731A17300B6D60D /* AddressBook.framework */; };
+		43DE7D011731A17300B6D60D /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DE7D001731A17300B6D60D /* AddressBookUI.framework */; };
+		43DE7D031731A17300B6D60D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DE7D021731A17300B6D60D /* AudioToolbox.framework */; };
+		43DE7D051731A17300B6D60D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DE7D041731A17300B6D60D /* AVFoundation.framework */; };
+		43DE7D071731A17300B6D60D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DE7D061731A17300B6D60D /* MediaPlayer.framework */; };
+		43DE7D091731A17300B6D60D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DE7D081731A17300B6D60D /* SystemConfiguration.framework */; };
+		43DE7D0F1731A17300B6D60D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D0D1731A17300B6D60D /* InfoPlist.strings */; };
+		43DE7D111731A17300B6D60D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DE7D101731A17300B6D60D /* main.m */; };
+		43DE7D131731A17300B6D60D /* BackboneCapture-Prefix.pch in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D121731A17300B6D60D /* BackboneCapture-Prefix.pch */; };
+		43DE7D2F1731A17600B6D60D /* SalesforceHybridSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DE7D2E1731A17600B6D60D /* SalesforceHybridSDK.framework */; };
+		43DE7D311731A17600B6D60D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DE7D301731A17600B6D60D /* libz.dylib */; };
+		43DE7D351731A17600B6D60D /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D341731A17600B6D60D /* icon-72.png */; };
+		43DE7D371731A17600B6D60D /* icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D361731A17600B6D60D /* icon-72@2x.png */; };
+		43DE7D391731A17600B6D60D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D381731A17600B6D60D /* icon.png */; };
+		43DE7D3B1731A17600B6D60D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D3A1731A17600B6D60D /* icon@2x.png */; };
+		43DE7D3E1731A17600B6D60D /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D3D1731A17600B6D60D /* Default-Landscape~ipad.png */; };
+		43DE7D401731A17600B6D60D /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D3F1731A17600B6D60D /* Default-Landscape@2x~ipad.png */; };
+		43DE7D421731A17600B6D60D /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D411731A17600B6D60D /* Default-Portrait~ipad.png */; };
+		43DE7D441731A17600B6D60D /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D431731A17600B6D60D /* Default-Portrait@2x~ipad.png */; };
+		43DE7D461731A17600B6D60D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D451731A17600B6D60D /* Default.png */; };
+		43DE7D481731A17600B6D60D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D471731A17600B6D60D /* Default@2x.png */; };
+		43DE7D4A1731A17600B6D60D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D491731A17600B6D60D /* Default-568h@2x.png */; };
+		43DE7D4C1731A17600B6D60D /* Default~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D4B1731A17600B6D60D /* Default~iPad.png */; };
+		43DE7D4E1731A17600B6D60D /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D4D1731A17600B6D60D /* readme.md */; };
+		43DE7D521731A17600B6D60D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DE7D511731A17600B6D60D /* AppDelegate.m */; };
+		43DE7D551731A17600B6D60D /* README in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D541731A17600B6D60D /* README */; };
+		43DE7D571731A17600B6D60D /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D561731A17600B6D60D /* config.xml */; };
+		43DE7D591731A17600B6D60D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D581731A17600B6D60D /* Settings.bundle */; };
+		43DE7D5B1731A17700B6D60D /* CordovaResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D5A1731A17700B6D60D /* CordovaResources.bundle */; };
+		43DE7D5D1731A17700B6D60D /* SalesforceSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D5C1731A17700B6D60D /* SalesforceSDKResources.bundle */; };
+		43DE7D641731B8F100B6D60D /* www in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D631731B8F100B6D60D /* www */; };
+		43DE7D661731BB4E00B6D60D /* Capture.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D651731BB4E00B6D60D /* Capture.bundle */; };
+		43DE7D6B1731BB5900B6D60D /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D671731BB5900B6D60D /* de.lproj */; };
+		43DE7D6C1731BB5900B6D60D /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D681731BB5900B6D60D /* en.lproj */; };
+		43DE7D6D1731BB5900B6D60D /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D691731BB5900B6D60D /* es.lproj */; };
+		43DE7D6E1731BB5900B6D60D /* se.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 43DE7D6A1731BB5900B6D60D /* se.lproj */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		43DE7CE51731A17200B6D60D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = www;
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		43DE7CE71731A17200B6D60D /* BackboneCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackboneCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43DE7CEA1731A17200B6D60D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		43DE7CEC1731A17300B6D60D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		43DE7CEE1731A17300B6D60D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		43DE7CF01731A17300B6D60D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		43DE7CF21731A17300B6D60D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		43DE7CF41731A17300B6D60D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		43DE7CF61731A17300B6D60D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		43DE7CF81731A17300B6D60D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		43DE7CFA1731A17300B6D60D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		43DE7CFC1731A17300B6D60D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		43DE7CFE1731A17300B6D60D /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		43DE7D001731A17300B6D60D /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		43DE7D021731A17300B6D60D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		43DE7D041731A17300B6D60D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		43DE7D061731A17300B6D60D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		43DE7D081731A17300B6D60D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		43DE7D0C1731A17300B6D60D /* BackboneCapture-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BackboneCapture-Info.plist"; sourceTree = "<group>"; };
+		43DE7D0E1731A17300B6D60D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		43DE7D101731A17300B6D60D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		43DE7D121731A17300B6D60D /* BackboneCapture-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BackboneCapture-Prefix.pch"; sourceTree = "<group>"; };
+		43DE7D2E1731A17600B6D60D /* SalesforceHybridSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SalesforceHybridSDK.framework; sourceTree = "<group>"; };
+		43DE7D301731A17600B6D60D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
+		43DE7D341731A17600B6D60D /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-72.png"; path = "Resources/icons/icon-72.png"; sourceTree = "<group>"; };
+		43DE7D361731A17600B6D60D /* icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-72@2x.png"; path = "Resources/icons/icon-72@2x.png"; sourceTree = "<group>"; };
+		43DE7D381731A17600B6D60D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/icons/icon.png; sourceTree = "<group>"; };
+		43DE7D3A1731A17600B6D60D /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Resources/icons/icon@2x.png"; sourceTree = "<group>"; };
+		43DE7D3D1731A17600B6D60D /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "Resources/splash/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		43DE7D3F1731A17600B6D60D /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x~ipad.png"; path = "Resources/splash/Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		43DE7D411731A17600B6D60D /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "Resources/splash/Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		43DE7D431731A17600B6D60D /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait@2x~ipad.png"; path = "Resources/splash/Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		43DE7D451731A17600B6D60D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/splash/Default.png; sourceTree = "<group>"; };
+		43DE7D471731A17600B6D60D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/splash/Default@2x.png"; sourceTree = "<group>"; };
+		43DE7D491731A17600B6D60D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/splash/Default-568h@2x.png"; sourceTree = "<group>"; };
+		43DE7D4B1731A17600B6D60D /* Default~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default~iPad.png"; path = "Resources/splash/Default~iPad.png"; sourceTree = "<group>"; };
+		43DE7D4D1731A17600B6D60D /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.md; sourceTree = "<group>"; };
+		43DE7D501731A17600B6D60D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
+		43DE7D511731A17600B6D60D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
+		43DE7D541731A17600B6D60D /* README */ = {isa = PBXFileReference; lastKnownFileType = text; name = README; path = Plugins/README; sourceTree = "<group>"; };
+		43DE7D561731A17600B6D60D /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = config.xml; sourceTree = "<group>"; };
+		43DE7D581731A17600B6D60D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		43DE7D5A1731A17700B6D60D /* CordovaResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CordovaResources.bundle; sourceTree = "<group>"; };
+		43DE7D5C1731A17700B6D60D /* SalesforceSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SalesforceSDKResources.bundle; sourceTree = "<group>"; };
+		43DE7D631731B8F100B6D60D /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
+		43DE7D651731BB4E00B6D60D /* Capture.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Capture.bundle; path = CordovaResources.bundle/Capture.bundle; sourceTree = "<group>"; };
+		43DE7D671731BB5900B6D60D /* de.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = de.lproj; path = CordovaResources.bundle/de.lproj; sourceTree = "<group>"; };
+		43DE7D681731BB5900B6D60D /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = en.lproj; path = CordovaResources.bundle/en.lproj; sourceTree = "<group>"; };
+		43DE7D691731BB5900B6D60D /* es.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = es.lproj; path = CordovaResources.bundle/es.lproj; sourceTree = "<group>"; };
+		43DE7D6A1731BB5900B6D60D /* se.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = se.lproj; path = CordovaResources.bundle/se.lproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43DE7CE21731A17200B6D60D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43DE7CEB1731A17300B6D60D /* Foundation.framework in Frameworks */,
+				43DE7CED1731A17300B6D60D /* MessageUI.framework in Frameworks */,
+				43DE7CEF1731A17300B6D60D /* UIKit.framework in Frameworks */,
+				43DE7CF11731A17300B6D60D /* CFNetwork.framework in Frameworks */,
+				43DE7CF31731A17300B6D60D /* CoreGraphics.framework in Frameworks */,
+				43DE7CF51731A17300B6D60D /* CoreLocation.framework in Frameworks */,
+				43DE7CF71731A17300B6D60D /* CoreMedia.framework in Frameworks */,
+				43DE7CF91731A17300B6D60D /* QuartzCore.framework in Frameworks */,
+				43DE7CFB1731A17300B6D60D /* Security.framework in Frameworks */,
+				43DE7CFD1731A17300B6D60D /* MobileCoreServices.framework in Frameworks */,
+				43DE7CFF1731A17300B6D60D /* AddressBook.framework in Frameworks */,
+				43DE7D011731A17300B6D60D /* AddressBookUI.framework in Frameworks */,
+				43DE7D031731A17300B6D60D /* AudioToolbox.framework in Frameworks */,
+				43DE7D051731A17300B6D60D /* AVFoundation.framework in Frameworks */,
+				43DE7D071731A17300B6D60D /* MediaPlayer.framework in Frameworks */,
+				43DE7D091731A17300B6D60D /* SystemConfiguration.framework in Frameworks */,
+				43DE7D2F1731A17600B6D60D /* SalesforceHybridSDK.framework in Frameworks */,
+				43DE7D311731A17600B6D60D /* libz.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43DE7CDC1731A17200B6D60D = {
+			isa = PBXGroup;
+			children = (
+				43DE7D0A1731A17300B6D60D /* BackboneCapture */,
+				43DE7CE91731A17200B6D60D /* Frameworks */,
+				43DE7CE81731A17200B6D60D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		43DE7CE81731A17200B6D60D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43DE7CE71731A17200B6D60D /* BackboneCapture.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43DE7CE91731A17200B6D60D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43DE7CEA1731A17200B6D60D /* Foundation.framework */,
+				43DE7CEC1731A17300B6D60D /* MessageUI.framework */,
+				43DE7CEE1731A17300B6D60D /* UIKit.framework */,
+				43DE7CF01731A17300B6D60D /* CFNetwork.framework */,
+				43DE7CF21731A17300B6D60D /* CoreGraphics.framework */,
+				43DE7CF41731A17300B6D60D /* CoreLocation.framework */,
+				43DE7CF61731A17300B6D60D /* CoreMedia.framework */,
+				43DE7CF81731A17300B6D60D /* QuartzCore.framework */,
+				43DE7CFA1731A17300B6D60D /* Security.framework */,
+				43DE7CFC1731A17300B6D60D /* MobileCoreServices.framework */,
+				43DE7CFE1731A17300B6D60D /* AddressBook.framework */,
+				43DE7D001731A17300B6D60D /* AddressBookUI.framework */,
+				43DE7D021731A17300B6D60D /* AudioToolbox.framework */,
+				43DE7D041731A17300B6D60D /* AVFoundation.framework */,
+				43DE7D061731A17300B6D60D /* MediaPlayer.framework */,
+				43DE7D081731A17300B6D60D /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43DE7D0A1731A17300B6D60D /* BackboneCapture */ = {
+			isa = PBXGroup;
+			children = (
+				43DE7D631731B8F100B6D60D /* www */,
+				43DE7D2E1731A17600B6D60D /* SalesforceHybridSDK.framework */,
+				43DE7D301731A17600B6D60D /* libz.dylib */,
+				43DE7D4D1731A17600B6D60D /* readme.md */,
+				43DE7D581731A17600B6D60D /* Settings.bundle */,
+				43DE7D5A1731A17700B6D60D /* CordovaResources.bundle */,
+				43DE7D5C1731A17700B6D60D /* SalesforceSDKResources.bundle */,
+				43DE7D321731A17600B6D60D /* Resources */,
+				43DE7D4F1731A17600B6D60D /* Classes */,
+				43DE7D531731A17600B6D60D /* Plugins */,
+				43DE7D0B1731A17300B6D60D /* Supporting Files */,
+			);
+			path = BackboneCapture;
+			sourceTree = "<group>";
+		};
+		43DE7D0B1731A17300B6D60D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				43DE7D0C1731A17300B6D60D /* BackboneCapture-Info.plist */,
+				43DE7D0D1731A17300B6D60D /* InfoPlist.strings */,
+				43DE7D101731A17300B6D60D /* main.m */,
+				43DE7D121731A17300B6D60D /* BackboneCapture-Prefix.pch */,
+				43DE7D561731A17600B6D60D /* config.xml */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		43DE7D321731A17600B6D60D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				43DE7D671731BB5900B6D60D /* de.lproj */,
+				43DE7D681731BB5900B6D60D /* en.lproj */,
+				43DE7D691731BB5900B6D60D /* es.lproj */,
+				43DE7D6A1731BB5900B6D60D /* se.lproj */,
+				43DE7D651731BB4E00B6D60D /* Capture.bundle */,
+				43DE7D331731A17600B6D60D /* icons */,
+				43DE7D3C1731A17600B6D60D /* splash */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		43DE7D331731A17600B6D60D /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				43DE7D341731A17600B6D60D /* icon-72.png */,
+				43DE7D361731A17600B6D60D /* icon-72@2x.png */,
+				43DE7D381731A17600B6D60D /* icon.png */,
+				43DE7D3A1731A17600B6D60D /* icon@2x.png */,
+			);
+			name = icons;
+			sourceTree = "<group>";
+		};
+		43DE7D3C1731A17600B6D60D /* splash */ = {
+			isa = PBXGroup;
+			children = (
+				43DE7D3D1731A17600B6D60D /* Default-Landscape~ipad.png */,
+				43DE7D3F1731A17600B6D60D /* Default-Landscape@2x~ipad.png */,
+				43DE7D411731A17600B6D60D /* Default-Portrait~ipad.png */,
+				43DE7D431731A17600B6D60D /* Default-Portrait@2x~ipad.png */,
+				43DE7D451731A17600B6D60D /* Default.png */,
+				43DE7D471731A17600B6D60D /* Default@2x.png */,
+				43DE7D491731A17600B6D60D /* Default-568h@2x.png */,
+				43DE7D4B1731A17600B6D60D /* Default~iPad.png */,
+			);
+			name = splash;
+			sourceTree = "<group>";
+		};
+		43DE7D4F1731A17600B6D60D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				43DE7D501731A17600B6D60D /* AppDelegate.h */,
+				43DE7D511731A17600B6D60D /* AppDelegate.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		43DE7D531731A17600B6D60D /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				43DE7D541731A17600B6D60D /* README */,
+			);
+			name = Plugins;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		43DE7CE61731A17200B6D60D /* BackboneCapture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43DE7D601731A17700B6D60D /* Build configuration list for PBXNativeTarget "BackboneCapture" */;
+			buildPhases = (
+				43DE7CE11731A17200B6D60D /* Sources */,
+				43DE7CE21731A17200B6D60D /* Frameworks */,
+				43DE7CE31731A17200B6D60D /* Resources */,
+				43DE7CE41731A17200B6D60D /* Sources */,
+				43DE7CE51731A17200B6D60D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BackboneCapture;
+			productName = BackboneCapture;
+			productReference = 43DE7CE71731A17200B6D60D /* BackboneCapture.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		43DE7CDD1731A17200B6D60D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Developerforce;
+			};
+			buildConfigurationList = 43DE7CE01731A17200B6D60D /* Build configuration list for PBXProject "BackboneCapture" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 43DE7CDC1731A17200B6D60D;
+			productRefGroup = 43DE7CE81731A17200B6D60D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				43DE7CE61731A17200B6D60D /* BackboneCapture */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		43DE7CE31731A17200B6D60D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43DE7D0F1731A17300B6D60D /* InfoPlist.strings in Resources */,
+				43DE7D131731A17300B6D60D /* BackboneCapture-Prefix.pch in Resources */,
+				43DE7D351731A17600B6D60D /* icon-72.png in Resources */,
+				43DE7D371731A17600B6D60D /* icon-72@2x.png in Resources */,
+				43DE7D391731A17600B6D60D /* icon.png in Resources */,
+				43DE7D3B1731A17600B6D60D /* icon@2x.png in Resources */,
+				43DE7D3E1731A17600B6D60D /* Default-Landscape~ipad.png in Resources */,
+				43DE7D401731A17600B6D60D /* Default-Landscape@2x~ipad.png in Resources */,
+				43DE7D421731A17600B6D60D /* Default-Portrait~ipad.png in Resources */,
+				43DE7D441731A17600B6D60D /* Default-Portrait@2x~ipad.png in Resources */,
+				43DE7D461731A17600B6D60D /* Default.png in Resources */,
+				43DE7D481731A17600B6D60D /* Default@2x.png in Resources */,
+				43DE7D4A1731A17600B6D60D /* Default-568h@2x.png in Resources */,
+				43DE7D4C1731A17600B6D60D /* Default~iPad.png in Resources */,
+				43DE7D4E1731A17600B6D60D /* readme.md in Resources */,
+				43DE7D551731A17600B6D60D /* README in Resources */,
+				43DE7D571731A17600B6D60D /* config.xml in Resources */,
+				43DE7D591731A17600B6D60D /* Settings.bundle in Resources */,
+				43DE7D5B1731A17700B6D60D /* CordovaResources.bundle in Resources */,
+				43DE7D5D1731A17700B6D60D /* SalesforceSDKResources.bundle in Resources */,
+				43DE7D641731B8F100B6D60D /* www in Resources */,
+				43DE7D661731BB4E00B6D60D /* Capture.bundle in Resources */,
+				43DE7D6B1731BB5900B6D60D /* de.lproj in Resources */,
+				43DE7D6C1731BB5900B6D60D /* en.lproj in Resources */,
+				43DE7D6D1731BB5900B6D60D /* es.lproj in Resources */,
+				43DE7D6E1731BB5900B6D60D /* se.lproj in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43DE7CE11731A17200B6D60D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43DE7D111731A17300B6D60D /* main.m in Sources */,
+				43DE7D521731A17600B6D60D /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43DE7CE41731A17200B6D60D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		43DE7D0D1731A17300B6D60D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43DE7D0E1731A17300B6D60D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		43DE7D5E1731A17700B6D60D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		43DE7D5F1731A17700B6D60D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "CORDOVA_FRAMEWORK=1";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		43DE7D611731A17700B6D60D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/BackboneCapture\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BackboneCapture/BackboneCapture-Prefix.pch";
+				INFOPLIST_FILE = "BackboneCapture/BackboneCapture-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		43DE7D621731A17700B6D60D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/BackboneCapture\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BackboneCapture/BackboneCapture-Prefix.pch";
+				INFOPLIST_FILE = "BackboneCapture/BackboneCapture-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		43DE7CE01731A17200B6D60D /* Build configuration list for PBXProject "BackboneCapture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43DE7D5E1731A17700B6D60D /* Debug */,
+				43DE7D5F1731A17700B6D60D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43DE7D601731A17700B6D60D /* Build configuration list for PBXNativeTarget "BackboneCapture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43DE7D611731A17700B6D60D /* Debug */,
+				43DE7D621731A17700B6D60D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 43DE7CDD1731A17200B6D60D /* Project object */;
+}
