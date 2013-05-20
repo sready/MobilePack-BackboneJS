@@ -48,12 +48,9 @@ POSSIBILITY OF SUCH DAMAGE.
 <script>
 
 var loginUrl    = 'https://login.salesforce.com/';
-// var clientId    = '<?=$_ENV['client_id']?>'; //demo only
-// var redirectUri = '<?=$_ENV['app_url']?>/index.php';
-// var proxyUrl    = '<?=$_ENV['app_url']?>/proxy.php?mode=native';
-var clientId    = '3MVG9y6x0357HleczgGPFxcVeCCzcBfLySI2moq3sdy0_BIqNtEGzymIS1F_wbmT4jQw4jzOeKriBqQyKy.TN'; //demo only
-var redirectUri = 'https://localhost/~ppatterson/backbone/index.php';
-var proxyUrl    = 'https://localhost/~ppatterson/backbone/proxy.php?mode=native';
+var clientId    = '<?=$_ENV['client_id']?>'; //demo only
+var redirectUri = '<?=$_ENV['app_url']?>/index.php';
+var proxyUrl    = '<?=$_ENV['app_url']?>/proxy.php?mode=native';
 
 $(document).ready(function() {
   //Add event listeners and so forth here
