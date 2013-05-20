@@ -38,44 +38,45 @@ POSSIBILITY OF SUCH DAMAGE.
   <!-- ========= -->
   <!-- Libraries -->
   <!-- ========= -->
-  <script src="resources/lib/jquery.js" type="text/javascript"></script>
-  <script src="resources/lib/lodash.js" type="text/javascript"></script>
-  <script src="resources/lib/backbone.js" type="text/javascript"></script>
+  <script src="resources/lib/jquery-2.0.0.min.js" type="text/javascript"></script>
+  <script src="resources/lib/underscore-1.4.4.min.js" type="text/javascript"></script>
+  <script src="resources/lib/backbone-1.0.0.min.js" type="text/javascript"></script>
   <script src="resources/lib/forcetk.js" type="text/javascript"></script>
-  <script src="resources/lib/backbone.force.js" type="text/javascript"></script>
+  <script src="resources/lib/force.entity.js" type="text/javascript"></script>
   <script src="resources/lib/jquerymobile.js" type="text/javascript"></script>
 
 <script>
 
 var loginUrl    = 'https://login.salesforce.com/';
-var clientId    = '<?=$_ENV['client_id']?>'; //demo only
-var redirectUri = '<?=$_ENV['app_url']?>/index.php';
-var proxyUrl    = '<?=$_ENV['app_url']?>/proxy.php?mode=native';
-
-var client = new forcetk.Client(clientId, loginUrl, proxyUrl);
+// var clientId    = '<?=$_ENV['client_id']?>'; //demo only
+// var redirectUri = '<?=$_ENV['app_url']?>/index.php';
+// var proxyUrl    = '<?=$_ENV['app_url']?>/proxy.php?mode=native';
+var clientId    = '3MVG9y6x0357HleczgGPFxcVeCCzcBfLySI2moq3sdy0_BIqNtEGzymIS1F_wbmT4jQw4jzOeKriBqQyKy.TN'; //demo only
+var redirectUri = 'https://localhost/~ppatterson/backbone/index.php';
+var proxyUrl    = 'https://localhost/~ppatterson/backbone/proxy.php?mode=native';
 
 $(document).ready(function() {
-    //Add event listeners and so forth here
-    console.log("onLoad: jquery ready");
+  //Add event listeners and so forth here
+  console.log("onLoad: jquery ready");
 	$.mobile.ajaxEnabled = false;
-    $.mobile.linkBindingEnabled = false;
+  $.mobile.linkBindingEnabled = false;
 	console.log("mobile init end");
 	console.log('DOCUMENT READY '+window.location.href);
-	if(client.sessionId == null) {
-		var oauthResponse = {};
-		if (window.location.hash && window.location.href.indexOf('access_token') > 0) {
-			var message = window.location.hash.substr(1);
-			var nvps = message.split('&');
-			for (var nvp in nvps) {
-			    var parts = nvps[nvp].split('=');
-				oauthResponse[parts[0]] = unescape(parts[1]);
-			}
-			console.log('init app');
-			if(oauthResponse['access_token']) {sessionCallback(oauthResponse);}
-		} else {
-			url = getAuthorizeUrl(loginUrl, clientId, redirectUri);
-			window.location.href = url;
+	var oauthResponse = {};
+	if (window.location.hash && window.location.href.indexOf('access_token') > 0) {
+		var message = window.location.hash.substr(1);
+		var nvps = message.split('&');
+		for (var nvp in nvps) {
+		    var parts = nvps[nvp].split('=');
+			oauthResponse[parts[0]] = unescape(parts[1]);
 		}
+		console.log('init app');
+		if(oauthResponse['access_token']) {
+      sessionCallback(oauthResponse);
+    }
+	} else {
+		url = getAuthorizeUrl(loginUrl, clientId, redirectUri);
+		window.location.href = url;
 	}
 });
 
@@ -94,11 +95,18 @@ function sessionCallback(oauthResponse) {
             responseText: 'No OAuth response'
         });
     } else {
-        client.setSessionToken(oauthResponse.access_token, null, oauthResponse.instance_url);
-		console.log("init backbone");
-		window.location.href = window.location.href.split('#')[0]+'#contacts';
-		myapp(client);
- 
+        var creds = {
+          clientId: clientId,
+          loginUrl: loginUrl,
+          proxyUrl: proxyUrl,
+          accessToken: oauthResponse.access_token,
+          instanceUrl: oauthResponse.instance_url,
+          refreshToken: oauthResponse.refresh_token
+        };
+        Force.init(creds);
+		    console.log("init backbone");
+		    window.location.href = window.location.href.split('#')[0]+'#contacts';
+		    myapp();
     }
 }
 
@@ -247,27 +255,27 @@ function getAuthCredentialsError(error) {
 
 
 
-    function myapp(client) {
-      console.log(client);
-      Backbone.Force.initialize(client);
-	  
+    function myapp() {
       var app = {}; // create namespace for our app
 	  	console.log("backbone started");
 	
       //--------------
       // Models
       //--------------
-      app.Contact = Backbone.Force.Model.extend({
-        type:'Contact',
-        fields:['Id', 'Name', 'FirstName', 'LastName', 'Email']
+      app.Contact = Force.SObject.extend({
+        sobjectType:'Contact',
+        fieldlist:['Id', 'FirstName', 'LastName', 'Email']
       });
 
       //--------------
       // Collections
       //--------------
-      app.ContactsCollection = Backbone.Force.Collection.extend({
+      app.ContactsCollection = Force.SObjectCollection.extend({
         model: app.Contact,
-        query: "WHERE IsDeleted = false"
+        fieldlist:['Id', 'Name', 'FirstName', 'LastName', 'Email'],
+        config: function() {
+          return {type:"soql", query:"SELECT " + this.fieldlist.join(",") + " FROM Contact ORDER BY Name LIMIT 25"};
+        }
       }),
 
       //--------------

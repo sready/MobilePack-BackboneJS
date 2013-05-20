@@ -78,6 +78,15 @@ if (forcetk.Client === undefined) {
         this.apiVersion = null;
         this.instanceUrl = null;
         this.asyncAjax = true;
+        this.userAgentString = null;
+    }
+
+    /**
+    * Set a User-Agent to use in the client.
+    * @param uaString A User-Agent string to use for all requests.
+    */
+    forcetk.Client.prototype.setUserAgentString = function(uaString) {
+        this.userAgentString = uaString;
     }
 
     /**
@@ -184,8 +193,15 @@ if (forcetk.Client === undefined) {
                 if (that.proxyUrl !== null) {
                     xhr.setRequestHeader('SalesforceProxy-Endpoint', url);
                 }
-                xhr.setRequestHeader(that.authzHeader, "OAuth " + that.sessionId);
-                xhr.setRequestHeader('X-User-Agent', 'salesforce-toolkit-rest-javascript/' + that.apiVersion);
+                xhr.setRequestHeader(that.authzHeader, "Bearer " + that.sessionId);
+                var forceTkAgent = 'salesforce-toolkit-rest-javascript/' + that.apiVersion;
+                if (that.userAgentString !== null) {
+                    xhr.setRequestHeader('X-User-Agent', that.userAgentString + " " + forceTkAgent);
+                    //xhr.setRequestHeader('User-Agent', that.userAgentString); // XXX this line might be useless
+                }
+                else {
+                    xhr.setRequestHeader('X-User-Agent', forceTkAgent);
+                }
             }
         });
     }
